@@ -1,28 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './App.css'; 
 import fotoProfil from './img_Adittia/jas ub.png'; 
 
 export default function App() {
+  
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      window.history.replaceState(null, "", "/adittia-dwi-kurniawan");
+    }
+  }, []);
+
   const profile = {
     namaLengkap: "Adittia Dwi Kurniawan",
     headline: "Mahasiswa IT | Web Developer | UI/UX Enthusiast",
     kelas: "T2C",
+    nim: "253140701111036",
     jurusan: "D3 Teknologi Informasi",
     domisili: "Kota Malang, Jawa Timur",
     foto: fotoProfil, 
-    tentang: "Perkenalkan, saya Adittia Dwi, mahasiswa program studi D3 Teknologi Informasi yang menaruh minat besar pada persilangan antara dunia teknologi dan bisnis. Sebagai mahasiswa IT, saya menyadari bahwa teknologi tidak hanya sebatas penulisan kode, tetapi tentang meracik teknologi menjadi solusi bisnis yang nyata.",
+    tentang: "Saya adalah Adittia Dwi Kurniawan, mahasiswa Program Studi D3 Teknologi Informasi di Universitas Brawijaya dengan latar belakang pendidikan Desain Komunikasi Visual dari SMKN 11 Malang. Perpaduan antara kemampuan teknis dan artistik membuat saya mampu menghadirkan solusi digital yang tidak hanya fungsional, tetapi juga estetis. Saya berpengalaman dalam desain grafis, fotografi, dan manajemen operasional, serta memiliki rekam jejak meningkatkan efisiensi kerja dan kepuasan pelanggan melalui ketelitian dan kreativitas. Minat saya terletak pada persilangan antara teknologi dan bisnis, dengan fokus meracik teknologi menjadi strategi yang relevan dan berdampak nyata. Dengan semangat belajar tinggi, saya terus mengasah keterampilan agar dapat berkontribusi dalam transformasi digital berkelanjutan.",
     email: "adittiadwikurniawan@gmail.com",
-    telepon: "+62 812-3456-7890",
+    telepon: "+62 895395181263",
     linkedin: "linkedin.com/in/adittiadwi",
     github: "github.com/adittia-dev",
     warnaTema: "#3B82F6", 
   };
 
-  const keahlian = ["Java", "Html", "Css","java", "React JS", "Tailwind CSS", "Node.js", "UI/UX Design"];
+  const keahlian = ["Java", "Html", "Css","JavaScript", "React JS", "Tailwind CSS", "Node.js", "UI/UX Design"];
   
   const pendidikan = [
     { tahun: "2022 - 2025", institusi: "SMKN 11 Malang", jurusan: "Desain Komunikasi Visual" },
-    { tahun: "2022 - Sekarang", institusi: "Universitas Brawijaya", jurusan: "D3 Teknologi Informasi" }
+    { tahun: "2025 - Sekarang", institusi: "Universitas Brawijaya", jurusan: "D3 Teknologi Informasi" }
   ];
 
   return (
@@ -32,21 +40,19 @@ export default function App() {
         {/* Header */}
         <div className="mb-6">
           <h1 className="text-2xl font-extrabold text-slate-800 tracking-tight">
-            Portfolio <span style={{ color: profile.warnaTema }}>.</span>
+            Halaman Profil <span style={{ color: profile.warnaTema }}>.</span>
           </h1>
         </div>
 
         {/* Layout Utama Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* ================= KOLOM KIRI ================= */}
+          {/* KOLOM KIRI */}
           <div className="lg:col-span-4 space-y-6">
-            
-            {/* Kartu Profil Utama */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-100 flex flex-col items-center text-center bayangan-halus">
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 flex flex-col items-center text-center shadow-sm">
               <div className="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-slate-50 bg-slate-100">
                 {profile.foto ? (
-                  <img src={profile.foto} alt="Profil" className="w-full h-full object-cover object-center" />
+                  <img src={profile.foto} alt="Profil" className="w-full h-full object-cover object-top" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-4xl text-slate-300 font-bold">?</div>
                 )}
@@ -63,11 +69,14 @@ export default function App() {
               </div>
             </div>
 
-            {/* Kartu Informasi Akademik & Kontak */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-100 space-y-6 bayangan-halus">
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 space-y-6 shadow-sm">
               <div>
                 <h3 className="block text-xs font-bold text-slate-500 mb-2 uppercase tracking-wider">Informasi Akademik</h3>
                 <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-sm text-slate-500">NIM</span>
+                    <span className="text-sm font-bold text-slate-800">{profile.nim}</span>
+                  </div>
                   <div className="flex justify-between"><span className="text-sm text-slate-500">Kelas</span><span className="text-sm font-bold text-slate-800">{profile.kelas}</span></div>
                   <div className="flex justify-between"><span className="text-sm text-slate-500">Prodi</span><span className="text-sm font-bold text-slate-800">{profile.jurusan}</span></div>
                   <div className="flex justify-between"><span className="text-sm text-slate-500">Domisili</span><span className="text-sm font-bold text-slate-800">{profile.domisili}</span></div>
@@ -86,11 +95,9 @@ export default function App() {
             </div>
           </div>
 
-          {/* ================= KOLOM KANAN ================= */}
+          {/* KOLOM KANAN */}
           <div className="lg:col-span-8 space-y-6">
-            
-            {/* Kartu Tentang Saya */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-100 bayangan-halus">
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
               <h2 className="text-xl font-extrabold text-slate-800 mb-6 flex items-center gap-3">
                 <span className="w-2 h-8 rounded-full" style={{ background: profile.warnaTema }}></span> Tentang Saya
               </h2>
@@ -98,10 +105,7 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-
-              {/* Kartu Pendidikan */}
-              <div className="bg-white rounded-3xl p-8 border border-slate-100 bayangan-halus">
+              <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
                 <h3 className="text-lg font-bold text-slate-800 mb-6">Pendidikan</h3>
                 <div className="space-y-6">
                   {pendidikan.map((item, idx) => (
@@ -114,7 +118,6 @@ export default function App() {
                   ))}
                 </div>
               </div>
-              
             </div>
           </div>
 
