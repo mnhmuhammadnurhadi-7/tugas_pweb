@@ -1,18 +1,16 @@
 import React from "react";
 import './App.css'; 
-
- import fotoProfil from './img_Adittia/jas ub.png'; 
+import fotoProfil from './img_Adittia/jas ub.png'; 
 
 export default function App() {
-  // Semua data ditulis langsung di sini (statis)
   const profile = {
     namaLengkap: "Adittia Dwi Kurniawan",
     headline: "Mahasiswa IT | Web Developer | UI/UX Enthusiast",
     kelas: "T2C",
     jurusan: "D3 Teknologi Informasi",
     domisili: "Kota Malang, Jawa Timur",
-    foto: fotoProfil, // Ganti null menjadi fotoProfil jika import di atas diaktifkan
-    tentang: "Perkenalkan, saya Adittia Dwi Kurniawan, mahasiswa program studi D3 Teknologi Informasi yang menaruh minat besar pada persilangan antara dunia teknologi dan bisnis. Sebagai mahasiswa IT, saya menyadari bahwa teknologi tidak hanya sebatas penulisan kode, tetapi tentang meracik teknologi menjadi solusi bisnis yang nyata.",
+    foto: fotoProfil, 
+    tentang: "Perkenalkan, saya Adittia Dwi, mahasiswa program studi D3 Teknologi Informasi yang menaruh minat besar pada persilangan antara dunia teknologi dan bisnis. Sebagai mahasiswa IT, saya menyadari bahwa teknologi tidak hanya sebatas penulisan kode, tetapi tentang meracik teknologi menjadi solusi bisnis yang nyata.",
     email: "adittiadwikurniawan@gmail.com",
     telepon: "+62 812-3456-7890",
     linkedin: "linkedin.com/in/adittiadwi",
@@ -20,7 +18,7 @@ export default function App() {
     warnaTema: "#3B82F6", 
   };
 
-  const keahlian = ["Java", "Html", "Css","JavaScript", "React JS", "Tailwind CSS", "Node.js", "UI/UX Design"];
+  const keahlian = ["Java", "Html", "Css","java", "React JS", "Tailwind CSS", "Node.js", "UI/UX Design"];
   
   const pendidikan = [
     { tahun: "2022 - 2025", institusi: "SMKN 11 Malang", jurusan: "Desain Komunikasi Visual" },
