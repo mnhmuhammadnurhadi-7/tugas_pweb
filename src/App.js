@@ -12,7 +12,7 @@ export default function App() {
     jurusan: "D3 Teknologi Informasi",
     domisili: "Kota Malang, Jawa Timur",
     foto: fotoProfil, // Ganti null menjadi fotoProfil jika import di atas diaktifkan
-    tentang: "Perkenalkan, saya Adittia Dwi, mahasiswa program studi D3 Teknologi Informasi yang menaruh minat besar pada persilangan antara dunia teknologi dan bisnis. Sebagai mahasiswa IT, saya menyadari bahwa teknologi tidak hanya sebatas penulisan kode, tetapi tentang meracik teknologi menjadi solusi bisnis yang nyata.",
+    tentang: "Perkenalkan, saya Adittia Dwi Kurniawan, mahasiswa program studi D3 Teknologi Informasi yang menaruh minat besar pada persilangan antara dunia teknologi dan bisnis. Sebagai mahasiswa IT, saya menyadari bahwa teknologi tidak hanya sebatas penulisan kode, tetapi tentang meracik teknologi menjadi solusi bisnis yang nyata.",
     email: "adittiadwikurniawan@gmail.com",
     telepon: "+62 812-3456-7890",
     linkedin: "linkedin.com/in/adittiadwi",
