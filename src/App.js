@@ -3,12 +3,11 @@ import fotoProfil from './img_mnh/mnh.png';
 
 function App() {
   return (
-    <> 
+     
     <div >
       <Profil_mnh/>
     </div> 
-    </>
-    
+      
   );
 }
 
