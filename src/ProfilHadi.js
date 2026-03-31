@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import fotoProfil from './img_mnh/mnh.png';
 
