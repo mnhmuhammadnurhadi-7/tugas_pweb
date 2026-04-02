@@ -2,6 +2,7 @@ import './App.css';
 
 import ProfilAdittia from './ProfilAdittia';
 import ProfilHadi from './ProfilHadi';
+import ProfilAndra from './ProfilAndra';
 
 export default function App() {
   
@@ -16,6 +17,10 @@ export default function App() {
     
     return <ProfilHadi />;
   } 
+  else if (path === "/paundra-bayu-aji") {
+    
+    return <ProfilAndra />;
+  }
   else {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50">
@@ -27,6 +32,9 @@ export default function App() {
           </a>
           <a href="/muhammad-nur-hadi" className="px-6 py-3 bg-indigo-500 text-white rounded-lg font-bold hover:bg-indigo-600 transition">
             Profil Hadi
+          </a>
+          <a href="/paundra-bayu-aji" className="px-6 py-3 bg-indigo-500 text-white rounded-lg font-bold hover:bg-indigo-600 transition">
+            Profil Andra
           </a>
         </div>
       </div>
